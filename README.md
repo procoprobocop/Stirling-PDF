@@ -122,7 +122,7 @@ docker run -d \
 
   -v /location/of/customFiles:/customFiles \
 ```
-Docker Compose
+Docker Compose (docker-compose.yml)
 ```yaml
 version: '3.3'
 services:
@@ -139,133 +139,129 @@ services:
       - DOCKER_ENABLE_SECURITY=false
 ```
 
-Note: Podman is CLI-compatible with Docker, so simply replace "docker" with "podman".
+Примечание: Podman совместим с Docker через интерфейс командной строки (CLI), поэтому просто замените "docker" на "podman".
 
-## Enable OCR/Compression feature
-Please view https://github.com/Stirling-Tools/Stirling-PDF/blob/main/HowToUseOCR.md
+## Включить функцию распознавания текста / сжатия
+Пожалуйста, ознакомьтесь с https://github.com/Stirling-Tools/Stirling-PDF/blob/main/HowToUseOCR.md
 
-## Supported Languages
+## Поддерживаемые языки
 
-Stirling PDF currently supports 26!
-- English (English) (en_GB)
-- English (US) (en_US)
-- Arabic (العربية) (ar_AR)
-- German (Deutsch) (de_DE)
-- French (Français) (fr_FR)
-- Spanish (Español) (es_ES)
-- Simplified Chinese (简体中文) (zh_CN)
-- Traditional Chinese (繁體中文) (zh_TW)
-- Catalan (Català) (ca_CA)
-- Italian (Italiano) (it_IT)
-- Swedish (Svenska) (sv_SE)
-- Polish (Polski) (pl_PL)
-- Romanian (Română) (ro_RO)
-- Korean (한국어) (ko_KR)
-- Portuguese Brazilian (Português) (pt_BR)
-- Russian (Русский) (ru_RU)
-- Basque (Euskara) (eu_ES)
-- Japanese (日本語) (ja_JP)
-- Dutch (Nederlands) (nl_NL)
-- Greek (el_GR)
-- Turkish (Türkçe) (tr_TR)
-- Indonesia (Bahasa Indonesia) (id_ID)
-- Hindi (हिंदी) (hi_IN)
-- Hungarian (Magyar) (hu_HU)
-- Bulgarian (Български) (bg_BG)
-- Sebian Latin alphabet (Srpski) (sr-Latn-RS)
+Stirling PDF в настоящее время поддерживает 26 языков!
+- Английский (English) (en_GB)
+- Английский (США) (en_US)
+- Арабский (العربية) (ar_AR)
+- Немецкий (Deutsch) (de_DE)
+- Французский (Français) (fr_FR)
+- Испанский (Español) (es_ES)
+- Упрощенный китайский (简体中文) (zh_CN)
+- Традиционный китайский (繁體中文) (zh_TW)
+- Каталанский (Català) (ca_CA)
+- Итальянский (Italiano) (it_IT)
+- Шведский (Svenska) (sv_SE)
+- Польский (Polski) (pl_PL)
+- Румынский (Română) (ro_RO)
+- Корейский (한국어) (ko_KR)
+- Португальский (Бразилия) (Português) (pt_BR)
+- Русский (Русский) (ru_RU)
+- Баскский (Euskara) (eu_ES)
+- Японский (日本語) (ja_JP)
+- Голландский (Nederlands) (nl_NL)
+- Греческий (el_GR)
+- Турецкий (Türkçe) (tr_TR)
+- Индонезийский (Bahasa Indonesia) (id_ID)
+- Хинди (हिंदी) (hi_IN)
+- Венгерский (Magyar) (hu_HU)
+- Болгарский (Български) (bg_BG)
+- Сербский (латиница) (Srpski) (sr-Latn-RS)
 
-## Contributing (creating issues, translations, fixing bugs, etc.)
+## Содействие (создание проблем, переводы, исправление ошибок и т. д.)
 
-Please see our [Contributing Guide](CONTRIBUTING.md)!
+Пожалуйста, ознакомьтесь с нашим [Руководством по содействию](CONTRIBUTING.md)!
 
-## Customisation
-Stirling PDF allows easy customization of the app.
-Includes things like
-- Custom application name
-- Custom slogans, icons, images, and even custom HTML (via file overrides)
+## Настройка
+Stirling PDF позволяет легко настраивать приложение.
+Включает в себя такие вещи, как
+- Настраиваемое название приложения
+- Настраиваемые слоганы, значки, изображения, а также пользовательский HTML (через переопределение файлов)
 
+Для этого есть два варианта, либо использовать сгенерированный файл настроек ``settings.yml``
+Этот файл находится в каталоге ``/configs`` и использует стандартный формат YAML
 
-There are two options for this, either using the generated settings file ``settings.yml``
-This file is located in the ``/configs`` directory and follows standard YAML formatting
-
-Environment variables are also supported and would override the settings file
-For example in the settings.yml you have
+Также поддерживаются переменные среды и они переопределяют файл настроек.
+Например, в файле settings.yml у вас есть
 ```yaml
 system:
   defaultLocale: 'en-US'
 ```
 
-To have this via an environment variable you would have ``SYSTEM_DEFAULTLOCALE``
+Чтобы сделать это с помощью переменной среды, у вас должно быть ``SYSTEM_DEFAULTLOCALE``
 
-The Current list of settings is
+Текущий список параметров:
 ```yaml
 security:
-  enableLogin: false # set to 'true' to enable login
+  enableLogin: false # установите значение 'true' для включения входа
   csrfDisabled: true
 
 system:
-  defaultLocale: 'en-US' # Set the default language (e.g. 'de-DE', 'fr-FR', etc)
-  googlevisibility: false # 'true' to allow Google visibility (via robots.txt), 'false' to disallow
-  customStaticFilePath: '/customFiles/static/' # Directory path for custom static files
+  defaultLocale: 'en-US' # Установите язык по умолчанию (например, 'de-DE', 'fr-FR', и т. д.)
+  googlevisibility: false # 'true', чтобы разрешить видимость Google (через robots.txt), 'false', чтобы запретить
+  customStaticFilePath: '/customFiles/static/' # Путь к каталогу для пользовательских статических файлов
 
 #ui:
-#  appName: exampleAppName # Application's visible name
-#  homeDescription: I am a description # Short description or tagline shown on homepage.
-#  appNameNavbar: navbarName # Name displayed on the navigation bar
+#  appName: exampleAppName # Видимое название приложения
+#  homeDescription: I am a description # Краткое описание или слоган, отображаемый на домашней странице.
+#  appNameNavbar: navbarName # Название, отображаемое на панели навигации
 
 endpoints:
-  toRemove: [] # List endpoints to disable (e.g. ['img-to-pdf', 'remove-pages'])
-  groupsToRemove: [] # List groups to disable (e.g. ['LibreOffice'])
+  toRemove: [] # Список конечных точек для отключения (например, ['img-to-pdf', 'remove-pages'])
+  groupsToRemove: [] # Список групп для отключения (например, ['LibreOffice'])
 
 metrics:
-  enabled: true # 'true' to enable Info APIs endpoints (view http://localhost:8080/swagger-ui/index.html#/API to learn more), 'false' to disable
+  enabled: true # 'true' для включения конечных точек API Info (см. http://localhost:8080/swagger-ui/index.html#/API, чтобы узнать больше), 'false' для отключения
 ```
-### Extra notes
-- Endpoints. Currently, the endpoints ENDPOINTS_TO_REMOVE and GROUPS_TO_REMOVE can include comma separate lists of endpoints and groups to disable as example ENDPOINTS_TO_REMOVE=img-to-pdf,remove-pages would disable both image-to-pdf and remove pages, GROUPS_TO_REMOVE=LibreOffice Would disable all things that use LibreOffice. You can see a list of all endpoints and groups [here](https://github.com/Stirling-Tools/Stirling-PDF/blob/main/Endpoint-groups.md)
-- customStaticFilePath. Customise static files such as the app logo by placing files in the /customFiles/static/ directory. An example of customising app logo is placing a /customFiles/static/favicon.svg to override current SVG. This can be used to change any images/icons/css/fonts/js etc in Stirling-PDF
+### Дополнительные примечания
+- Эндпоинты. В настоящее время эндпоинты ENDPOINTS_TO_REMOVE и GROUPS_TO_REMOVE могут включать списки эндпоинтов и групп через запятую, чтобы отключить, как пример, ENDPOINTS_TO_REMOVE=img-to-pdf,remove-pages отключит и img-to-pdf, и remove pages, GROUPS_TO_REMOVE=LibreOffice отключит все, что использует LibreOffice. Вы можете увидеть список всех эндпоинтов и групп [здесь](https://github.com/Stirling-Tools/Stirling-PDF/blob/main/Endpoint-groups.md)
+- customStaticFilePath. Настройка статических файлов, таких как логотип приложения, путем размещения файлов в каталоге /customFiles/static/. Пример настройки логотипа приложения - размещение /customFiles/static/favicon.svg для замены текущего SVG. Это можно использовать для изменения любых изображений/иконок/css/шрифтов/js и т. д. в Stirling-PDF
 
-### Environment only parameters
-- ``SYSTEM_ROOTURIPATH`` ie set to ``/pdf-app`` to Set the application's root URI to ``localhost:8080/pdf-app``
-- ``SYSTEM_CONNECTIONTIMEOUTMINUTES`` to set custom connection timeout values
-- ``DOCKER_ENABLE_SECURITY`` to tell docker to download security jar (required as true for auth login)
+### Параметры только для среды выполнения
+- ``SYSTEM_ROOTURIPATH`` т. е. установите ``/pdf-app`` для установки корневого URI приложения на ``localhost:8080/pdf-app``
+- ``SYSTEM_CONNECTIONTIMEOUTMINUTES`` для установки пользовательских значений времени ожидания подключения
+- ``DOCKER_ENABLE_SECURITY`` чтобы сообщить Docker о загрузке файлов безопасности (необходимо указать true для аутентификации входа)
 
 ## API
-For those wanting to use Stirling-PDFs backend API to link with their own custom scripting to edit PDFs you can view all existing API documentation
-[here](https://app.swaggerhub.com/apis-docs/Stirling-Tools/Stirling-PDF/) or navigate to /swagger-ui/index.html of your stirling-pdf instance for your versions documentation (Or by following the API button in your settings of Stirling-PDF)
+Для тех, кто хочет использовать бэкэнд-API Stirling-PDF для связи со своими собственными сценариями для редактирования PDF-файлов, можно просмотреть всю существующую документацию по API [здесь](https://app.swaggerhub.com/apis-docs/Stirling-Tools/Stirling-PDF/) или перейти по адресу /swagger-ui/index.html вашего экземпляра stirling-pdf для документации вашей версии (или перейти по кнопке API в настройках Stirling-PDF)
 
-
-## Login authentication
+## Аутентификация входа
 ![stirling-login](images/login-light.png)
-### Prerequisites:
-- User must have the folder ./configs volumed within docker so that it is retained during updates.
-- Docker uses must download the security jar version by setting ``DOCKER_ENABLE_SECURITY`` to ``true`` in environment variables.
-- Then either enable login via the settings.yml file or via setting ``SECURITY_ENABLE_LOGIN`` to ``true``
-- Now the initial user will be generated with username ``admin`` and password ``stirling``. On login you will be forced to change the password to a new one. You can also use the environment variables ``SECURITY_INITIALLOGIN_USERNAME`` and  ``SECURITY_INITIALLOGIN_PASSWORD`` to set your own straight away (Recommended to remove them after user creation).
+### Предварительные требования:
+- Пользователь должен иметь папку ./configs внутри Docker, чтобы она сохранялась во время обновлений.
+- Пользователи Docker должны загрузить версию безопасности jar, установив ``DOCKER_ENABLE_SECURITY`` в ``true`` в переменных среды.
+- Затем либо включите вход через файл settings.yml, либо установите ``SECURITY_ENABLE_LOGIN`` в ``true``
+- Теперь начальный пользователь будет сгенерирован с именем пользователя ``admin`` и паролем ``stirling``. При входе в систему вас попросят сменить пароль на новый. Вы также можете использовать переменные среды ``SECURITY_INITIALLOGIN_USERNAME`` и ``SECURITY_INITIALLOGIN_PASSWORD``, чтобы немедленно установить свой собственный пароль (рекомендуется удалить их после создания пользователя).
 
-Once the above has been done, on restart, a new stirling-pdf-DB.mv.db will show if everything worked.
+После выполнения вышеуказанного, при перезапуске будет показан новый stirling-pdf-DB.mv.db, если все сработало.
 
-When you login to Stirling PDF you will be redirected to /login page to login with those default credentials. After login everything should function as normal
+При входе в Stirling PDF вы будете перенаправлены на страницу /login для входа с этими учетными данными по умолчанию. После входа все должно функционировать как обычно.
 
-To access your account settings go to Account settings in the settings cog menu (top right in navbar) This Account settings menu is also where you find your API key.
+Чтобы получить доступ к настройкам учетной записи, перейдите в "Настройки учетной записи" в меню настроек (в правом верхнем углу навигационной панели). Это меню настройки учетной записи также содержит ваш ключ API.
 
-To add new users go to the bottom of Account settings and hit 'Admin Settings', here you can add new users. The different roles mentioned within this are for rate limiting. This is a Work in progress which will be expanding on more in future
+Чтобы добавить новых пользователей, перейдите внизу в "Настройки администратора", здесь вы можете добавлять новых пользователей. Упоминаемые в этом различные роли предназначены для ограничения скорости. Это работа в процессе, которая будет расширяться в будущем.
 
-For API usage you must provide a header with 'X-API-Key' and the associated API key for that user.
+Для использования API вы должны предоставить заголовок с 'X-API-Key' и связанный с ним ключ API для этого пользователя.
 
+## Часто задаваемые вопросы
 
-## FAQ
+### Вопрос 1: Какие планируемые функции?
+- Полоса прогресса/отслеживание
+- Полностью настраиваемые логические конвейеры для объединения нескольких операций вместе.
+- Поддержка папок с автоматическим сканированием для выполнения операций
+- Сокрытие текста (через пользовательский интерфейс, а не только автоматический способ)
+- Добавление форм
+- Поддержка макета с несколькими страницами (сшивание страниц PDF вместе) поддержка x строк y столбцов и настраиваемый размер страницы
+- Заполнение форм вручную и автоматически
 
-### Q1: What are your planned features?
-- Progress bar/Tracking
-- Full custom logic pipelines to combine multiple operations together.
-- Folder support with auto scanning to perform operations on
-- Redact text (Via UI not just automated way)
-- Add Forms
-- Multi page layout (Stich PDF pages together) support x rows y columns and custom page sizing
-- Fill forms mannual and automatic
+### Вопрос 2: Почему мое приложение загружает файлы .htm?
+Это часто вызванная проблема вашей конфигурацией NGINX. Размер загружаемого файла по умолчанию для NGINX составляет 1 МБ, вам нужно добавить следующее в ваш файл sites-available Nginx. ``client_max_body_size SIZE;`` Где "SIZE" - это, например, 50M для файлов размером 50 МБ.
 
-### Q2: Why is my application downloading .htm files?
-This is an issue caused commonly by your NGINX configuration. The default file upload size for NGINX is 1MB, you need to add the following in your Nginx sites-available file. ``client_max_body_size SIZE;`` Where "SIZE" is 50M for example for 50MB files.
-
-### Q3: Why is my download timing out
-NGINX has timeout values by default so if you are running Stirling-PDF behind NGINX you may need to set a timeout value such as adding the config ``proxy_read_timeout 3600;``
+### Вопрос 3: Почему загрузка прерывается?
+У NGINX по умолчанию есть значения времени ожидания, поэтому, если вы запускаете Stirling-PDF за NGINX, вам может потребоваться установить значение времени ожидания, такое как добавление конфигурации ``proxy_read_timeout 3600;``
