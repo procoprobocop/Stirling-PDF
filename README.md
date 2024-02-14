@@ -10,103 +10,103 @@
 
 [![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/Stirling-Tools/Stirling-PDF/tree/digitalOcean&refcode=c3210994b1af)
 
-This is a powerful locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files, such as splitting merging, converting, reorganizing, adding images, rotating, compressing, and more. This locally hosted web application started as a 100% ChatGPT-made application and has evolved to include a wide range of features to handle all your PDF needs.
+Это мощный инструмент для манипулирования PDF-файлами, работающий на основе веб-технологий и запускаемый локально с использованием Docker. Он позволяет выполнять различные операции с PDF-файлами, такие как разделение, слияние, конвертация, переупорядочивание, добавление изображений, поворот, сжатие и многое другое. Это приложение с веб-интерфейсом, запускаемое локально, начало свое существование как приложение, созданное исключительно с помощью ChatGPT, и развилось до включения широкого спектра функций для обработки всех ваших PDF-файлов.
 
-Stirling PDF makes no outbound calls for any record keeping or tracking.
+Stirling PDF не осуществляет исходящих вызовов для сохранения или отслеживания записей.
 
-All files and PDFs exist either exclusively on the client side, reside in server memory only during task execution, or temporarily reside in a file solely for the execution of the task. Any file downloaded by the user will have been deleted from the server by that point.
+Все файлы и PDF-файлы либо существуют исключительно на клиентской стороне, находятся в памяти сервера только во время выполнения задачи, либо временно находятся в файле исключительно для выполнения задачи. Любой файл, загруженный пользователем, будет удален с сервера к тому времени.
 
 ![stirling-home](images/stirling-home.png)
 
-## Features
-- Dark mode support.
-- Custom download options (see [here](https://github.com/Stirling-Tools/Stirling-PDF/blob/main/images/settings.png) for example)
-- Parallel file processing and downloads
-- API for integration with external scripts
-- Optional Login and Authentication support (see [here](https://github.com/Stirling-Tools/Stirling-PDF/tree/main#login-authentication) for documentation)
+## Особенности
+- Поддержка темного режима.
+- Пользовательские параметры загрузки (см. [здесь](https://github.com/Stirling-Tools/Stirling-PDF/blob/main/images/settings.png) для примера)
+- Параллельная обработка файлов и загрузки
+- API для интеграции с внешними скриптами
+- Опциональная поддержка входа и аутентификации (см. [здесь](https://github.com/Stirling-Tools/Stirling-PDF/tree/main#login-authentication) для документации)
 
 
-## **PDF Features**
+## **Особенности PDF**
 
-### **Page Operations**
-- View and modify PDFs - View multi page PDFs with custom viewing sorting and searching. Plus on page edit features like annotate, draw and adding text and images. (Using PDF.js with Joxit and Liberation.Liberation fonts)
-- Full interactive GUI for merging/splitting/rotating/moving PDFs and their pages.
-- Merge multiple PDFs together into a single resultant file.
-- Split PDFs into multiple files at specified page numbers or extract all pages as individual files.
-- Reorganize PDF pages into different orders.
-- Rotate PDFs in 90-degree increments.
-- Remove pages.
-- Multi-page layout (Format PDFs into a multi-paged page).
-- Scale page contents size by set %.
-- Adjust Contrast.
-- Crop PDF.
-- Auto Split PDF (With physically scanned page dividers).
-- Extract page(s).
-- Convert PDF to a single page.
+### **Операции с страницами**
+- Просмотр и изменение PDF-файлов - Просмотр многостраничных PDF-файлов с настраиваемой сортировкой и поиском. Плюс функции редактирования на странице, такие как аннотирование, рисование и добавление текста и изображений. (Используется PDF.js с Joxit и Liberation.Liberation шрифтами)
+- Полностью интерактивный графический интерфейс для слияния/разделения/поворота/перемещения PDF-файлов и их страниц.
+- Объединение нескольких PDF-файлов в один результирующий файл.
+- Разделение PDF-файлов на несколько файлов по указанным номерам страниц или извлечение всех страниц в отдельные файлы.
+- Переупорядочивание страниц PDF в разном порядке.
+- Поворот PDF-файлов на 90-градусов.
+- Удаление страниц.
+- Макет нескольких страниц (форматирование PDF в многостраничный формат).
+- Изменение размера содержимого страницы на установленный %.
+- Регулировка контраста.
+- Обрезка PDF.
+- Автоматическое разделение PDF (с помощью физических разделителей страниц).
+- Извлечение страниц(ы).
+- Конвертация PDF в одностраничный файл.
 
-### **Conversion Operations**
-- Convert PDFs to and from images.
-- Convert any common file to PDF (using LibreOffice).
-- Convert PDF to Word/Powerpoint/Others (using LibreOffice).
-- Convert HTML to PDF.
-- URL to PDF.
-- Markdown to PDF.
+### **Операции конвертации**
+- Конвертация PDF в изображения и обратно.
+- Конвертация любого общего файла в PDF (с использованием LibreOffice).
+- Конвертация PDF в Word/Powerpoint/другие форматы (с использованием LibreOffice).
+- Конвертация HTML в PDF.
+- URL в PDF.
+- Markdown в PDF.
 
-### **Security & Permissions**
-- Add and remove passwords.
-- Change/set PDF Permissions.
-- Add watermark(s).
-- Certify/sign PDFs.
-- Sanitize PDFs.
-- Auto-redact text.
+### **Безопасность и разрешения**
+- Добавление и удаление паролей.
+- Изменение/установка разрешений PDF.
+- Добавление водяных знаков.
+- Подтверждение/подпись PDF.
+- Санитария PDF.
+- Автоудаление текста.
 
-### **Other Operations**
-- Add/Generate/Write signatures.
-- Repair PDFs.
-- Detect and remove blank pages.
-- Compare 2 PDFs and show differences in text.
-- Add images to PDFs.
-- Compress PDFs to decrease their filesize (Using OCRMyPDF).
-- Extract images from PDF.
-- Extract images from Scans.
-- Add page numbers.
-- Auto rename file by detecting PDF header text.
-- OCR on PDF (Using OCRMyPDF).
-- PDF/A conversion (Using OCRMyPDF).
-- Edit metadata.
-- Flatten PDFs.
-- Get all information on a PDF to view or export as JSON.
+### **Прочие операции**
+- Добавление/генерация/написание подписей.
+- Восстановление PDF-файлов.
+- Обнаружение и удаление пустых страниц.
+- Сравнение 2 PDF-файлов и отображение различий в тексте.
+- Добавление изображений в PDF-файлы.
+- Сжатие PDF для уменьшения их размера (с использованием OCRMyPDF).
+- Извлечение изображений из PDF.
+- Извлечение изображений из сканов.
+- Добавление номеров страниц.
+- Автоматическое переименование файла путем обнаружения текста заголовка PDF.
+- OCR на PDF (с использованием OCRMyPDF).
+- Преобразование в PDF/A (с использованием OCRMyPDF).
+- Редактирование метаданных.
+- Выпрямление PDF-файлов.
+- Получение всей информации о PDF для просмотра или экспорта в формате JSON.
 
 
-For a overview of the tasks and the technology each uses please view [Endpoint-groups.md](https://github.com/Stirling-Tools/Stirling-PDF/blob/main/Endpoint-groups.md)
-Demo of the app is available [here](https://stirlingpdf.io). username: demo, password: demo
+Для обзора задач и используемых технологий каждой из них, пожалуйста, ознакомьтесь с [Endpoint-groups.md](https://github.com/Stirling-Tools/Stirling-PDF/blob/main/Endpoint-groups.md)
+Демонстрация приложения доступна [здесь](https://stirlingpdf.io). имя пользователя: demo, пароль: demo
 
-## Technologies used
+## Используемые технологии
 - Spring Boot + Thymeleaf
 - [PDFBox](https://github.com/apache/pdfbox/tree/trunk)
-- [LibreOffice](https://www.libreoffice.org/discover/libreoffice/) for advanced conversions
+- [LibreOffice](https://www.libreoffice.org/discover/libreoffice/) для расширенных конвертаций
 - [OcrMyPdf](https://github.com/ocrmypdf/OCRmyPDF)
 - HTML, CSS, JavaScript
 - Docker
 - [PDF.js](https://github.com/mozilla/pdf.js)
 - [PDF-LIB.js](https://github.com/Hopding/pdf-lib)
 
-## How to use
+## Как использовать
 
-### Locally
-Please view https://github.com/Stirling-Tools/Stirling-PDF/blob/main/LocalRunGuide.md
+### Локально
+Пожалуйста, ознакомьтесь с https://github.com/Stirling-Tools/Stirling-PDF/blob/main/LocalRunGuide.md
 
 ### Docker / Podman
 https://hub.docker.com/r/frooodle/s-pdf
 
-Stirling PDF has 3 different versions, a Full version, Lite, and ultra-Lite. Depending on the types of features you use you may want a smaller image to save on space.
-To see what the different versions offer please look at our [version mapping](https://github.com/Stirling-Tools/Stirling-PDF/blob/main/Version-groups.md)
-For people that don't mind about space optimization just use the latest tag.
+Stirling PDF имеет 3 различных версии: полную, Lite и Ultra-Lite. В зависимости от используемых функций вам может потребоваться более компактный образ для экономии места.
+Чтобы узнать, что предлагают различные версии, ознакомьтесь с нашим [соответствием версий](https://github.com/Stirling-Tools/Stirling-PDF/blob/main/Version-groups.md)
+Для тех, кто не обращает внимание на оптимизацию места, просто используйте тег "latest".
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/frooodle/s-pdf/latest?label=Stirling-PDF%20Full)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/frooodle/s-pdf/latest-lite?label=Stirling-PDF%20Lite)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/frooodle/s-pdf/latest-ultra-lite?label=Stirling-PDF%20Ultra-Lite)
 
-Docker Run
+Запуск Docker
 ```bash
 docker run -d \
   -p 8080:8080 \
@@ -118,7 +118,7 @@ docker run -d \
   frooodle/s-pdf:latest
 
 
-  Can also add these for customisation but are not required
+  Также можно добавить следующее для настройки, но это не обязательно
 
   -v /location/of/customFiles:/customFiles \
 ```
